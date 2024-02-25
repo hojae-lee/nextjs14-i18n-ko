@@ -1,0 +1,22 @@
+{
+  "nav": {
+    "locale-selector": {
+      "message": "Choose a language."
+    },
+    "menu": {
+      "home": "Home",
+      "about": "About",
+      "contact": "Contact"
+    }
+  },
+  "views": {
+    "home": {
+      "title": "Home Page!",
+      "body": "english home page"
+    },
+    "about": {
+      "title": "About Page!",
+      "body": "english about page"
+    }
+  }
+}

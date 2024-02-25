@@ -1,0 +1,22 @@
+{
+  "nav": {
+    "locale-selector": {
+      "message": "언어를 골라라"
+    },
+    "menu": {
+      "home": "홈",
+      "about": "소개",
+      "contact": "연락"
+    }
+  },
+  "views": {
+    "home": {
+      "title": "반갑습니다.",
+      "body": "이 사이트는 한국사이트 입니다."
+    },
+    "about": {
+      "title": "어바웃 페이지",
+      "body": "이 사이트는 어바웃 페이지 입니다."
+    }
+  }
+}
