@@ -17,4 +17,4 @@ COPY . .
 RUN yarn build
 
 # 컨테이너가 시작될 때 실행할 명령 설정
-CMD ["yarn", "start"]
+CMD ["node_modules/.bin/next", "start"]
