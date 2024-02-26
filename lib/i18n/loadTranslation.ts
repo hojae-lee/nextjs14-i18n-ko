@@ -23,6 +23,16 @@ export type TranslationObject = (key: ObjectKeys<Translation>) => string;
 export default async function loadTranslation(
   locale: Locale
 ): Promise<Translation> {
+  // translations 객체에서 지원하는 모든 로케일 키를 확인합니다.
+  const supportedLocales = Object.keys(translations);
+
+  // 주어진 로케일이 지원되는지 확인합니다.
+  if (!supportedLocales.includes(locale)) {
+    // 지원되지 않는 로케일인 경우, 적절한 오류 메시지와 함께 예외를 발생시킵니다.
+    throw new Error(
+      `Locale '${locale}' is not supported. Supported locales are: ${supportedLocales.join(", ")}`
+    );
+  }
   // 주어진 로케일 키에 해당하는 번역을 호출합니다.
   return translations[locale]();
 }
