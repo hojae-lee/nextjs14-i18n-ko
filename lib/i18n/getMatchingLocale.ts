@@ -29,12 +29,17 @@ export function getMatchingLocale(request: NextRequest): Locale {
   });
 
   // intl-localematcher의 match 함수를 호출하여 사용 가능한 클라이언트 로케일, 앱/서버 로케일 및 앱/서버 기본 로케일을 기반으로 최적의 일치 로케일을 가져옵니다.
-  const localeMatch: Locale = match(
-    clientLocales,
-    appLocales,
-    i18nConfig.defaultLocale
-  ) as Locale;
-
+  let localeMatch: Locale = "ko";
+  
+  try {
+    localeMatch = match(
+      clientLocales,
+      appLocales,
+      i18nConfig.defaultLocale
+    ) as Locale;
+  } catch (error) {
+    localeMatch = i18nConfig.defaultLocale;
+  }
   // 일치하는 로케일을 반환합니다.
   return localeMatch;
 }
