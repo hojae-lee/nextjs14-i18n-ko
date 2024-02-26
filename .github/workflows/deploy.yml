@@ -1,4 +1,4 @@
-name: conert-frontend-deploy
+name: convert-frontend-deploy
 
 on:
   push:
