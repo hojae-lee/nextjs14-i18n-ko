@@ -12,7 +12,7 @@ interface Props {
 
 export default function LocaleSelector({ message }: Props) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const pathname = usePathname();
+  const pathname = usePathname() ?? "/";
 
   const localeInfo = {
     en: {
