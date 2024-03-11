@@ -2,8 +2,19 @@ import { NextRequest, NextResponse } from "next/server";
 import { Locale, i18nConfig } from "./i18n";
 import { getMatchingLocale } from "./lib/i18n/getMatchingLocale";
 
+const PUBLIC_FILE = /\.(.*)$/;
+
 export default function middleware(request: NextRequest) {
-  // 국제화.
+  // 요청 URL이 이미지 경로인 경우, 국제화 처리를 건너뜁니다.
+  if (
+    request.nextUrl.pathname.startsWith("/_next") ||
+    request.nextUrl.pathname.includes("/api/") ||
+    PUBLIC_FILE.test(request.nextUrl.pathname)
+  ) {
+    return;
+  }
+
+  // 국제화 처리 로직
 
   // i18n 구성에서 사용 가능한 로케일을 반복하여 현재 요청 URL에 해당 로케일이 없는 경우에만 true로 설정합니다.
   const localeNotFound: boolean = i18nConfig.locales.every(
