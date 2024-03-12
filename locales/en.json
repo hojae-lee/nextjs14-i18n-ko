@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "title",
+    "description": "desc"
+  },
   "nav": {
     "locale-selector": {
       "message": "Choose a language."
