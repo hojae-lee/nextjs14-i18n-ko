@@ -18,6 +18,7 @@
 - PR Template 추가
 - health check 추가
 - tailwindcss 테마 추가
+- 동적 메타태그 설정 기능 추가
 
 ## 프로젝트 설치 및 실행 방법
 
