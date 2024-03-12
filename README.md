@@ -2,6 +2,10 @@
 
 안녕하세요. Nextjs14 에서 다국어 기능 구현 프로젝트입니다.
 
+## 디자인 컬러
+
+- [컬러](https://tailwindcss.com/docs/customizing-colors)
+
 ## 커스터마이즈 가능한 i18n 기능을 구현한 Next.js 14 프로젝트
 
 - .json 파일을 사용하여 다양한 번역 생성
