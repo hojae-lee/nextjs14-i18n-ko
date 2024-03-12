@@ -3,7 +3,7 @@ import getTranslation from "@/lib/i18n/getTranslation";
 import Home from "@/components/Home";
 import type { Metadata } from "next";
 
-type Props = {
+interface Props {
   params: { locale: Locale };
 };
 

@@ -2,7 +2,7 @@ import LocaleSelector from "./LocaleSelector";
 import MenuItem from "./MenuItem";
 import { TranslationObject } from "@/lib/i18n/loadTranslation";
 
-type Props = {
+interface Props {
   translation: TranslationObject;
 };
 
