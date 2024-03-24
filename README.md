@@ -1,6 +1,6 @@
 # Next.js 14 앱 라우터를 이용한 국제화 (i18n) 한국어 버전
 
-안녕하세요. 간단한 github action, docker 셋팅까지 완료된 Nextjs14 에서 다국어 기능 구현 프로젝트입니다.
+안녕하세요. 간단한 github action, docker 셋팅까지 완료된 Nextjs14 에서 다국어 기능 구현 프로젝트입니다..
 
 ## 디자인 컬러
 
