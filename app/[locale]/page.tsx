@@ -1,25 +1,29 @@
-import { Locale } from "@/i18n";
-import getTranslation from "@/lib/i18n/getTranslation";
-import Home from "@/components/Home";
 import type { Metadata } from "next";
+
+import Home from "@/app/[locale]/components/home/Home.tsx";
+
+import { Locale } from "@/i18n.ts";
+import getTranslation from "@/lib/i18n/getTranslation.ts";
 
 interface Props {
   params: { locale: Locale };
-};
+}
 
 export const dynamic = "force-dynamic";
 
 // 동적 메타 태그 설정
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
   const translation = await getTranslation(params.locale);
 
   return {
     title: translation("meta.title"),
     description: translation("meta.description"),
   };
-}
+};
 
-export default async function HomePage({ params }: Props) {
+const HomePage = async ({ params }: Props) => {
   const translation = await getTranslation(params.locale);
 
   return (
@@ -27,4 +31,6 @@ export default async function HomePage({ params }: Props) {
       <Home translation={translation} />
     </section>
   );
-}
+};
+
+export default HomePage;

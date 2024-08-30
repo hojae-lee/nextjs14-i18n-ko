@@ -1,5 +1,4 @@
 import { Locale, i18nConfig } from "@/i18n";
-import { ObjectKeys } from "@/lib/utils/objectKeys";
 
 // 지정된 로케일에 대한 번역 .json 파일을 비동기적으로 가져오는 함수를 포함합니다.
 const translations = {
@@ -13,7 +12,7 @@ export type Translation = Awaited<
 >;
 
 // Translation 타입에서 발견된 모든 중첩 키에 대한 생성된 타입을 정의합니다.
-export type TranslationObject = (key: ObjectKeys<Translation>) => string;
+export type TranslationObject = (key: string) => string;
 
 /**
  * 주어진 로케일을 기반으로 번역 .json 파일을 비동기적으로 로드합니다.

@@ -1,9 +1,11 @@
-import "@/app/globals.css";
-import Nav from "@/components/Navigation";
-import { Locale, i18nConfig } from "@/i18n";
-import getTranslation from "@/lib/i18n/getTranslation";
-import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
+
+import Nav from "@/common/components/navigation/index.tsx";
+
+import { Locale, i18nConfig } from "@/i18n.ts";
+import getTranslation from "@/lib/i18n/getTranslation.ts";
+import { GeistSans } from "geist/font/sans";
+import "@/app/globals.css";
 
 export const metadata: Metadata = {
   title: "Next.js 14 i18n",
@@ -14,9 +16,9 @@ export const metadata: Metadata = {
 };
 
 // 라우팅 후, 경로 데이터 정적으로 사용. params.locale 로 사용 가능.
-export async function generateStaticParams() {
+export const generateStaticParams = async () => {
   return i18nConfig.locales.map((locale: Locale) => ({ locale: locale }));
-}
+};
 
 type Props = {
   children: React.ReactNode;
@@ -25,7 +27,7 @@ type Props = {
   };
 };
 
-export default async function RootLayout({ children, params }: Props) {
+const RootLayout = async ({ children, params }: Props) => {
   const translation = await getTranslation(params.locale);
 
   return (
@@ -36,4 +38,6 @@ export default async function RootLayout({ children, params }: Props) {
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

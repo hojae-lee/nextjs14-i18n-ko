@@ -5,7 +5,7 @@ interface MenuItemProps {
   text: string;
 }
 
-export default function MenuItem({ href, text }: MenuItemProps) {
+const MenuItem = ({ href, text }: MenuItemProps) => {
   return (
     <Link href={href}>
       <span className="text-gray-800 hover:text-gray-600 cursor-pointer">
@@ -13,4 +13,6 @@ export default function MenuItem({ href, text }: MenuItemProps) {
       </span>
     </Link>
   );
-}
+};
+
+export default MenuItem;

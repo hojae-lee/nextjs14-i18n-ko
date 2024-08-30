@@ -2,9 +2,9 @@ import { TranslationObject } from "@/lib/i18n/loadTranslation";
 
 interface Props {
   translation: TranslationObject;
-};
+}
 
-export default function Home({ translation }: Props) {
+const Home = ({ translation }: Props) => {
   return (
     <div className="max-w-lg text-center">
       <h1 className="text-4xl font-medium tracking-tight">
@@ -15,4 +15,6 @@ export default function Home({ translation }: Props) {
       </p>
     </div>
   );
-}
+};
+
+export default Home;
